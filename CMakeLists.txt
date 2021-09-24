@@ -21,6 +21,14 @@ include_directories(src)
 enable_testing()
 
 add_library(${PROJECT_NAME} SHARED
+  src/base/camera.h
+  src/base/camera.inl
+  src/base/distorter.h
+  src/base/distorter.cc
+  src/base/image.h
+  src/bsae/image.cc
+  src/base/radial_distorter.h
+  src/base/radial_distorter.cc
   src/base/line2d.h
   src/base/point2d.h
   src/geometry/line2d_estimator.h
