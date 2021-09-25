@@ -26,6 +26,8 @@ add_library(${PROJECT_NAME} SHARED
   src/geometry/line2d_estimator.h
   src/geometry/line2d_estimator.cc
   src/geometry/ransac_estimator.h
+  src/geometry/rotation.h
+  src/geometry/rotation.cc
   src/ransac/random_number_generator.h
   src/ransac/random_number_generator.cc
   src/ransac/ransac.h
@@ -43,6 +45,12 @@ target_link_libraries(line2d_estimator_test
                       ${PROJECT_NAME} ${GTEST_LIBRARIES} -lpthread)
 add_test(line2d_estimator_test
          ${EXECUTABLE_OUTPUT_PATH}/line2d_estimator_test)
+
+add_executable(rotation_test src/geometry/rotation_test.cc)
+target_link_libraries(rotation_test
+                      ${PROJECT_NAME} ${GTEST_LIBRARIES} -lpthread)
+add_test(rotation_test
+         ${EXECUTABLE_OUTPUT_PATH}/rotation_test)
 
 add_executable(random_number_generator_test src/ransac/random_number_generator_test.cc)
 target_link_libraries(random_number_generator_test
