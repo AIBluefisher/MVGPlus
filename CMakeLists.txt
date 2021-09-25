@@ -23,6 +23,8 @@ enable_testing()
 add_library(${PROJECT_NAME} SHARED
   src/base/line2d.h
   src/base/point2d.h
+  src/geometry/homography2d_estimator.h
+  src/geometry/homography2d_estimator.cc
   src/geometry/line2d_estimator.h
   src/geometry/line2d_estimator.cc
   src/geometry/ransac_estimator.h
@@ -39,6 +41,12 @@ add_library(${PROJECT_NAME} SHARED
 #############################################################################################
 #                                  Unit Tests                                               #
 #############################################################################################
+
+add_executable(homography2d_estimator_test src/geometry/homography2d_estimator_test.cc)
+target_link_libraries(homography2d_estimator_test
+                      ${PROJECT_NAME} ${GTEST_LIBRARIES} -lpthread)
+add_test(homography2d_estimator_test
+         ${EXECUTABLE_OUTPUT_PATH}/homography2d_estimator_test)
 
 add_executable(line2d_estimator_test src/geometry/line2d_estimator_test.cc)
 target_link_libraries(line2d_estimator_test
