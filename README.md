@@ -4,10 +4,10 @@ Implementations of Multiple View Geometry in Computer Vision and some extended a
 
 ## Implementations
 
-- RANSAC
+- Template-based RANSAC
 - 2D Line estimator
-- Rotation Conversion (Rotation Matrix <=> Quaternion <=> Angle Axis). Some code inspired by colmap,
-and some by ceres.
+- 2D Homography estimator
+- Rotation Conversion (Rotation Matrix <=> Quaternion <=> Angle Axis). Some code inspired by colmap, and some by ceres.
 
 ## Dependencies
 
